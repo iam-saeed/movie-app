@@ -4,7 +4,10 @@ import axios from 'axios';
 
 const Home = () => {
     const [movieData, setMovieData] = useState([])
-    const [search, setSearch] = useState('spider')
+    const [search, setSearch] = useState({
+        search: 'spider'
+    })
+    const [newSearch, setNewSearch] = useState()
 
     const handleChange = (e) => {
         setSearch({
@@ -15,15 +18,15 @@ const Home = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?s=${search}&apikey=6cdea29d`).then((res) => {
+        axios.get(`http://www.omdbapi.com/?s=${search.search}&apikey=6cdea29d`).then((res) => {
             setMovieData(res.data.Search)
           })
-      }, [search])
+      }, [])
 
       const onClick = (e) => {
-        e.preventDefault()
-        axios.get(`http://www.omdbapi.com/?s=${search}&apikey=6cdea29d`).then((res) => {
+        axios.get(`http://www.omdbapi.com/?s=${search.search}&apikey=6cdea29d`).then((res) => {
             setMovieData(res.data.Search)
+            console.log('hi')
           })
       }
 
@@ -34,7 +37,8 @@ const Home = () => {
             <div className="heading">
                 <h1>M o v i e s</h1>
             <div className="search">
-            <input onSubmit={onClick} onChange={handleChange} className="search_input" type="text" placeholder="Search Movies"  />
+            <input onChange={handleChange} name="search" className="search_input" type="text" placeholder="Search Movies" onSubmit={onClick}  />
+            <button onClick={onClick} >submit</button>
             </div>
             </div>
 
