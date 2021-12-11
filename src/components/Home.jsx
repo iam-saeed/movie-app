@@ -5,20 +5,18 @@ import axios from 'axios';
 const Home = () => {
     const [movieData, setMovieData] = useState([])
     const [search, setSearch] = useState({
-        search: 'spider'
+        search: 'movie'
     })
-    const [newSearch, setNewSearch] = useState()
 
     const handleChange = (e) => {
         setSearch({
             ...search,
             [e.target.name]: e.target.value
         })
-        console.log(search)
     }
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?s=${search.search}&apikey=6cdea29d`).then((res) => {
+        axios.get(`http://www.omdbapi.com/?s=movie&apikey=6cdea29d`).then((res) => {
             setMovieData(res.data.Search)
           })
       }, [])
@@ -26,7 +24,6 @@ const Home = () => {
       const onClick = (e) => {
         axios.get(`http://www.omdbapi.com/?s=${search.search}&apikey=6cdea29d`).then((res) => {
             setMovieData(res.data.Search)
-            console.log('hi')
           })
       }
 
