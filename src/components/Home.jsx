@@ -35,10 +35,10 @@ const Home = () => {
         <>
         <div className="main-container">
             <div className="heading">
-                <h1>M o v i e s</h1>
+                <h1>M o v i e s </h1>
             <div className="search">
             <input onChange={handleChange} name="search" className="search_input" type="text" placeholder="Search Movies" onSubmit={onClick}  />
-            <button onClick={onClick} >submit</button>
+            <button onClick={onClick} type='submit' className="submit_btn">Search</button>
             </div>
             </div>
 

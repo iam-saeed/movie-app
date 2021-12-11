@@ -9,19 +9,84 @@
     min-height: 443px;
     max-height: 443px;
 }
+.search {
+    display: flex;
+    border: 1px solid crimson;
+}
+
+.submit_btn {
+    border: none;
+    cursor: pointer;
+    color: white;
+    background-color: crimson;
+    padding: 15px;
+} 
+@media screen and (max-width: 375px ) {
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }    
+    .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* display: none; */
+    }
+    .search_input {
+        min-width: 200px !important;
+    }
+}
+@media screen and (max-width: 411px ) {
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }    
+    .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* display: none; */
+    }
+    .search_input {
+        min-width: 200px !important;
+    }
+}
+
+@media screen and (max-width: 540px ) {
+    .search {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }    
+    .heading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        /* display: none; */
+    }
+    .search_input {
+        min-width: 200px !important;
+    }
+}
+
 .search_input {
     display: flex; 
     padding: 15px;
     border: none;
     outline: none;
     min-width: 400px;
-    border-radius: 20px;
     min-height: 5px;
 }
 
+
 h1 {
     font-family: 'Bebas Neue', cursive;
-    font-size: 72px;
+    font-size: 56px;
     color: crimson;
 }
 .movies {
