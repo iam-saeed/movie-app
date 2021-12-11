@@ -16,13 +16,13 @@ const Home = () => {
     }
 
     useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?s=movie&apikey=6cdea29d`).then((res) => {
+        axios.get(`https://www.omdbapi.com/?s=movie&apikey=6cdea29d`).then((res) => {
             setMovieData(res.data.Search)
           })
       }, [])
 
       const onClick = (e) => {
-        axios.get(`http://www.omdbapi.com/?s=${search.search}&apikey=6cdea29d`).then((res) => {
+        axios.get(`https://www.omdbapi.com/?s=${search.search}&apikey=6cdea29d`).then((res) => {
             setMovieData(res.data.Search)
           })
       }
