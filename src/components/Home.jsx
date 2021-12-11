@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react';
+import './styles.css';
 import axios from 'axios';
 
 const Home = () => {
-    const [movieData, setMovieData] = useState({
-        Poster: '',
-        Title: '',
-        Type: '',
-        Year: '',
-    })
-      let API_KEY = "a0f2b435";
-      useEffect(() => {
-        axios.get(`http://www.omdbapi.com/?s=avengers&apikey=${API_KEY}`).then((res) => {
-          console.log(res.data.Search)
+    const [movieData, setMovieData] = useState([])
+    const [search, setSearch] = useState('spider')
+
+    const handleChange = (e) => {
+        setSearch({
+            ...search,
+            [e.target.name]: e.target.value
         })
-      }, [])
+        console.log(search)
+    }
+
+    useEffect(() => {
+        axios.get(`http://www.omdbapi.com/?s=${search}&apikey=6cdea29d`).then((res) => {
+            setMovieData(res.data.Search)
+          })
+      }, [search])
+
 
     return (
-        <div>
-            
+        <>
+        <h1>Marvel Movies</h1>
+        <div className="movies">
+            {movieData.map((d) => (
+                <div className="movies" key={d.imbdID}>
+                <img className="mapped_poster_img" src={d.Poster} alt={d.Title} />
+                </div>
+            ))}
         </div>
+        </>
     )
 }
 

@@ -1,0 +1,13 @@
+.movies {
+    display: flex;
+    margin: 10px;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
