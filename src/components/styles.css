@@ -1,3 +1,29 @@
+.heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+}
+.mapped_poster_img {
+    max-width: 300px;
+    min-height: 443px;
+    max-height: 443px;
+}
+.search_input {
+    display: flex; 
+    padding: 15px;
+    border: none;
+    outline: none;
+    min-width: 400px;
+    border-radius: 20px;
+    min-height: 5px;
+}
+
+h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 72px;
+    color: crimson;
+}
 .movies {
     display: flex;
     margin: 10px;

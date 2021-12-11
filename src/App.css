@@ -6,10 +6,10 @@ body{
   background-color: black;
 }
 
-div {
+/* div {
   display: flex;
   flex-wrap: wrap;
-}
+} */
 
 /* .movies {
   display: flex;
